@@ -43,7 +43,7 @@ namespace CSharp.AzureGraphApi
             // Get user attributes using optional query parameters
             // https://developer.microsoft.com/en-us/graph/docs/api-reference/v1.0/api/user_get#optional-query-parameters
             var resultWithOptionalQuery = graphClient.Users["username@myorg.com"].Request().Select("AccountEnabled").GetAsync().Result;
-            Console.WriteLine($"User details: {result.DisplayName}, {result.AccountEnabled}");
+            Console.WriteLine($"User details: {result.DisplayName}, {resultWithOptionalQuery.AccountEnabled}");
             
 
             Console.ReadKey();
